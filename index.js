@@ -3,11 +3,10 @@ const app = express();
 
 app.use(express.json());
 
-// ---- Replace these with your details ----
-const FULL_NAME = "john_doe"; // lowercase only
-const DOB = "17091999"; // ddmmyyyy
-const EMAIL = "john@xyz.com";
-const ROLL_NUMBER = "ABCD123";
+const FULL_NAME = "rohith_sai_gopal_marrapu";
+const DOB = "21082004";
+const EMAIL = "m.rohithsaigopal@gmail.com";
+const ROLL_NUMBER = "22BCE2508";
 
 app.post("/bfhl", (req, res) => {
   try {
@@ -26,7 +25,6 @@ app.post("/bfhl", (req, res) => {
 
     data.forEach((item) => {
       if (/^-?\d+$/.test(item)) {
-        // Numeric check
         let num = parseInt(item, 10);
         if (num % 2 === 0) {
           even_numbers.push(item.toString());
@@ -42,7 +40,6 @@ app.post("/bfhl", (req, res) => {
       }
     });
 
-    // Generate alternating caps reverse string
     let concat_string = concatChars
       .join("")
       .split("")
@@ -67,7 +64,6 @@ app.post("/bfhl", (req, res) => {
   }
 });
 
-// For local testing
 app.listen(3000, () => console.log("Server running on port 3000"));
 
 module.exports = app;
